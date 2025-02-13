@@ -1,0 +1,323 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.dashboard {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas: 
+    "nav nav"
+    "side content";
+}
+
+.nav {
+    /* background-color: red; */
+    grid-area: nav;
+    border-bottom: 1px solid hsl(100,80%,60%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.side {
+    background-color: hsl(100,80%,60%);
+    grid-area: side;
+    position: relative;
+}
+.content {
+    background-color: hsla(100, 80%, 60%,.1);
+    grid-area: content;
+    overflow: auto;
+}
+
+.logo span {
+    font-size: 1.7rem;
+    color: hsl(100,80%,60%);
+    margin-left: 1rem;
+}
+
+.side ul {
+    list-style: none;
+    padding-top: 3rem; 
+     /* background-color: red;  */
+     width: 100%;
+}
+.side ul .bottom {
+    position: absolute;
+    bottom: 70px;
+}
+.side ul .bottom2 {
+    position: absolute;
+    bottom: 20px;
+}
+.side ul li {
+    /* background-color: aqua; */
+    padding: .4rem 0;
+    width: 100%;
+    margin-left: -6%;
+    margin-top: .4rem;
+    /* background-color: red; */
+}
+.side ul li a{
+    text-decoration: none;
+    color: #fff;
+    transition: all .3s;
+}
+
+/* .side ul li a:hover {
+    color: hsl(0, 14%, 99%);
+} */
+
+.side ul li a .icon {
+    font-size: 1.5rem;
+    margin-right: .5rem;
+}
+.side ul li a .list {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 540px) {
+    .dashboard {
+        grid-template-columns: 60px 1fr;
+    }
+    .side ul li {
+        margin-left: -1.3rem;
+
+    }
+    .side ul li a .list {
+        display: none;
+    }
+    .logo span {
+        margin-left: 5px;
+    }
+}
+.row-cont {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cards {
+    width: 280px;
+    height: 170px;
+    border-radius: .4em;
+}
+.card-1,.card-2,.card-3,.card-4 {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+}
+.card-1 {
+    background-color: hsla(160, 80%, 60%,.5);
+}
+.card-2 {
+    background-color: hsla(240, 80%, 60%,.5);
+}
+.card-3 {
+    background-color: hsla(60, 80%, 60%,.5);
+}
+.card-4 {
+    background-color: hsla(16, 80%, 60%,.5);
+}
+.card-icon {
+    font-size: 8rem;
+    opacity: .4;
+    margin-right: 2rem;
+}
+.card-num {
+    position: absolute;
+    top: 25%;
+    left: 8%;
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+}
+.card-name {
+    position: absolute;
+    top: 75%;
+    left: 8%;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+@media (max-width: 1430px) and (min-width: 878px){
+    .cards {
+        width: 300px;
+    }
+}
+@media (max-width: 878px) and (min-width: 625px) {
+    .cards {
+        width: 350px;
+    } 
+}
+@media (max-width: 625px) and (min-width: 540px) {
+    .cards {
+        width: 270px;
+    } 
+}
+@media (max-width: 540px) {
+    .cards {
+        width: 350px;
+    } 
+}
+.res {
+    margin: 1000px;
+}
+.title {
+    /* text-align: center; */
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    /* color: #fff; */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .25);
+}
+table tr {
+    padding: .4em;
+}
+thead tr {
+    background-color: hsla(100,80%,60%,.8);
+}
+thead th {
+    color: #fff;
+    font-size: 1.35em;
+}
+tbody tr:nth-child(even) {
+    background-color: #eaeaea;
+}
+table th, table td {
+    font-size: 1em;
+    padding: 1em;
+    text-align: center;
+}
+button {
+    color: #fff !important;
+}
+@media (max-width: 810px) {
+    .tb-d {
+        border: 3px solid hsla(100,80%,60%,.5);
+    }
+    .tb-d thead tr {
+        display: none;
+    }
+    .tb-d tr {
+        display: block;
+    }
+    .tb-d th, .tb-d td {
+        padding: .5em;
+    }
+    .tb-d td {
+        text-align: right;
+        display: block;
+        font-size: 1em;
+    }
+    .tb-d td::before{
+        content: attr(data-title)": ";
+        float: left;
+        font-weight: bold;
+    }
+    tbody tr:nth-child(even) {
+        background-color: hsla(100,80%,60%,.5);
+    }
+}
+@media (max-width: 1020px) {
+    .tb-a {
+        border: 3px solid hsla(100,80%,60%,.5);
+    }
+    .tb-a thead tr {
+        display: none;
+    }
+    .tb-a tr {
+        display: block;
+    }
+    .tb-a th, .tb-a td {
+        padding: .5em;
+    }
+    .tb-a td {
+        text-align: right;
+        display: block;
+        font-size: 1em;
+    }
+    .tb-a td::before{
+        content: attr(data-title)": ";
+        float: left;
+        font-weight: bold;
+    }
+    tbody tr:nth-child(even) {
+        background-color: hsla(100,80%,60%,.5);
+    }
+}
+.form-cont {
+    margin: 1rem;
+}
+.table-cont {
+    margin: 2rem 1rem;
+}
+.img-logo {
+    width: 80px;
+    border-radius: 99999px;
+}
+.cont-prof {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.card-prof {
+    width: 600px;
+    background-color: hsla(100, 80%, 60%,.1);
+    border-radius: .3em;
+    border: .5px solid hsl(100, 80%, 60%);
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user {
+    position: relative;
+    padding: 1rem 0;
+}
+.user h5 {
+    padding: .3rem 0;
+}
+.txt {
+    position: absolute;
+    right: 2%;
+}
+@media (max-width: 840px) and (min-width: 705px) {
+    .card-prof {
+        width: 450px;
+    }
+}
+@media (max-width: 705px) and (min-width: 650px) {
+    .card-prof {
+        width: 400px;
+    }
+}
+
+@media (max-width: 650px) and (min-width: 570px)  {
+    .card-prof {
+        width: 320px;
+    }
+}
+@media (max-width: 570px) and (min-width: 540px){
+    .card-prof {
+        width: 300px;
+    }
+}
+@media (max-width: 540px) {
+    .card-prof {
+        width: 400px;
+    }
+}
